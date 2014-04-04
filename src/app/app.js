@@ -1,6 +1,8 @@
 angular.module( 'ngBoilerplate', [
   'templates-app',
   'templates-common',
+  'templates-jade_app',
+  'templates-jade_common',
   'ngBoilerplate.home',
   'ngBoilerplate.about',
   'ui.state',

@@ -1,0 +1,35 @@
+doctype html
+html(ng-app="addressbook")
+
+  head
+    meta(charset="utf-8")
+    base(href="/")
+    title="addressbook"
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0")
+    link(rel="stylesheet" href="/application.css")
+    link(rel='stylesheet',
+         href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/css/semantic.min.css')
+    link(rel='stylesheet',
+         href='//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/fonts/basic.icons.eot')
+    script(type="text/javascript" defer src="/application.js")
+    script(type="text/javascript" defer src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    script(type="text/javascript" defer src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.12.0/javascript/semantic.min.js")
+
+  body
+    div.fixed.ui.transparent.inverted.main.menu
+      div.container
+        h3.red.header.item addressbook
+          a.item Home
+          a.item About
+          a.item Link
+    div.segment
+      main.ui.three.column.grid
+        aside.column
+          .ui.icon.input()
+            input(type='text' placeholder='Search')
+            i.search.icon
+        section.column
+          h2.ui.dividing.header
+            | 查詢內容
+          .ui.message
+            | fake data

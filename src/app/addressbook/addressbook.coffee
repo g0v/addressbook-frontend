@@ -13,9 +13,12 @@ angular.module("ngAddressbook.addressbook",
   return
 ).controller "addressbookCtrl",
 AddressbookController = ($scope, Organizations) ->
-  $scope.queryString
+
   $scope.$watch "queryString", (oldVal, newVal) ->
     return if oldVal is newVal
+
+    q =
+      name:
+        $matches: newVal
     $scope.queryResult = Organizations.fuzzySearch
-      queryString: $scope.queryString
-    # $scope.addressbook = Organizations.query
+      q: JSON.stringify(q)

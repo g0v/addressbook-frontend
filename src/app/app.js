@@ -8,7 +8,8 @@ angular.module( 'ngAddressbook', [
   'ngAddressbook.about',
   'ngAddressbook.addressbook',
   'ui.state',
-  'ui.route'
+  'ui.route',
+  'ngResource'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {

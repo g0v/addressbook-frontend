@@ -11,4 +11,11 @@ angular.module("ngAddressbook.addressbook",
       pageTitle: "Addressbook"
 
   return
-).controller "addressbookCtrl", AddressbookController = ($scope) ->
+).controller "addressbookCtrl",
+AddressbookController = ($scope, Organizations) ->
+  $scope.queryString
+  $scope.$watch "queryString", (oldVal, newVal) ->
+    return if oldVal is newVal
+    $scope.queryResult = Organizations.fuzzySearch
+      queryString: $scope.queryString
+    # $scope.addressbook = Organizations.query

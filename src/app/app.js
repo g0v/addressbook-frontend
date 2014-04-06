@@ -5,7 +5,6 @@ angular.module( 'ngAddressbook', [
   'templates-jade_common',
   'ngAddressbook.nav',
   'ngAddressbook.home',
-  'ngAddressbook.about',
   'ngAddressbook.addressbook',
   'ui.state',
   'ui.route',

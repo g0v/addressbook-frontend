@@ -1,16 +1,18 @@
-angular.module( 'ngBoilerplate', [
+angular.module( 'ngAddressbook', [
   'templates-app',
   'templates-common',
   'templates-jade_app',
   'templates-jade_common',
-  'ngBoilerplate.home',
-  'ngBoilerplate.about',
+  'ngAddressbook.nav',
+  'ngAddressbook.home',
+  'ngAddressbook.about',
+  'ngAddressbook.addressbook',
   'ui.state',
   'ui.route'
 ])
 
 .config( function myAppConfig ( $stateProvider, $urlRouterProvider ) {
-  $urlRouterProvider.otherwise( '/home' );
+  $urlRouterProvider.otherwise( '/addressbook' );
 })
 
 .run( function run () {
@@ -19,7 +21,7 @@ angular.module( 'ngBoilerplate', [
 .controller( 'AppCtrl', function AppCtrl ( $scope, $location ) {
   $scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
     if ( angular.isDefined( toState.data.pageTitle ) ) {
-      $scope.pageTitle = toState.data.pageTitle + ' | ngBoilerplate' ;
+      $scope.pageTitle = toState.data.pageTitle + ' | ngAddressbook' ;
     }
   });
 })

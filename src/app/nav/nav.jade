@@ -1,0 +1,9 @@
+.fixed.ui.top.collapsible.inverted.menu
+    .container
+        .header
+          a.left.floated.item.header.red.brand(href='/') addressbook
+        .content
+          a.item(href='#/addressbook' ui-route='/addressbook', ng-class='{active:$uiRoute}')
+            | 通訊錄
+          a.item(href='#/home' ui-route='/home', ng-class='{active:$uiRoute}')
+            | page2

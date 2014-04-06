@@ -10,8 +10,9 @@ angular.module('ngAddressbook.addressbook')
         method: 'GET'
         url: url
         isArray: true
+        responseType: 'json'
         transformResponse: (data) ->
-          JSON.parse(data).entries
+          data.entries
     }
   model.prototype.$url = url
 

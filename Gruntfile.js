@@ -19,6 +19,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   /**
    * Load in our build configuration file.
@@ -402,6 +403,24 @@ module.exports = function ( grunt ) {
       }
     },
 
+    /*
+     * Grunt connect configs
+     */
+    connect: {
+      options: {
+        port: 9876,
+        hostname: 'localhost',
+        livereload: true
+      },
+      server: {
+        options: {
+          open: true,
+          base: 'build'
+        }
+      }
+    },
+
+
     /**
      * The `index` task compiles the `index.html` file as a Grunt template. CSS
      * and JS files co-exist here but they get split apart later.
@@ -601,7 +620,7 @@ module.exports = function ( grunt ) {
    * before watching for changes.
    */
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'karma:unit', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build', 'karma:unit','connect', 'delta'] );
 
   /**
    * The default task is to build and compile.

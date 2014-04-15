@@ -23,10 +23,11 @@
   </head>
 
   <body>
-    <div id="nav" ng-include="'nav/nav.html'"></div>
-    <!-- main -->
-    <section id="container" class="container">
-      <div class="container" ui-view="main"></div>
-    </section>
+    <div id="wrapper">
+        <div id="nav" ng-include="'nav/nav.html'"></div>
+        <!-- main -->
+        <div class="intro_section" ui-view="addressBookSearchBox"></div>
+        <div class="result_section" ui-view="addressBookResultBox"></div>
+    </div>
   </body>
 </html>

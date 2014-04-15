@@ -1,12 +1,15 @@
 angular.module("ngAddressbook.addressbook",
                ["ui.state"]).config(config = ($stateProvider) ->
-  $stateProvider.state "addressbook",
+  $stateProvider
+  .state "addressbook",
     url: "/addressbook"
     views:
-      main:
+      addressBookSearchBox:
         controller: "addressbookCtrl"
-        templateUrl: "addressbook/addressbook.html"
-
+        templateUrl: "addressbook/addressBookSearchBox.html"
+      addressBookResultBox:
+        controller: "addressbookCtrl"
+        templateUrl: "addressbook/addressBookResultBox.html"
     data:
       pageTitle: "Addressbook"
 

@@ -1,7 +1,44 @@
-main.ui.two.column.page.grid
+main.ui.one.column.page.grid
   .column
-    h2.ui.dividing.header
-      | 查詢結果
-    .ui.message
-      .li(ng-repeat='item in queryResult')
-        {{item.name}}
+    h3.ui.result_list
+    .list
+      ul.message.cotainBox
+        li
+          .list_table
+            .photoBox
+              .photo
+              .name
+                p NONE-NAME, {{item.name}}
+              .sect
+            .infoBox
+              ul.basicBox
+                li.phone
+                  .info_title
+                    i.cloud.icon
+                    | 電話
+                  .info_content
+                    p.lab 國會研究室
+                    p.num 02-1234-567
+                    p.lab 國會研究室
+                    p.num 02-1234-567
+                li.fax
+                  i.fa.fa-print.fa-1x
+                  p 傳真
+                li.address
+                  i.fa.fa-home.fa-1x
+                  p 地址
+                li.email
+                  i.fa.fa-envelope-o.fa-1x
+                  p 信箱
+                li.web
+                  i.fa.fa-desktop.fa-1x
+                  p 網站
+            .btn
+              a(href='#')
+                p + 更多
+          .tag
+            .li_tag
+              p 1
+            .li_tag
+              p 1
+      .hr

@@ -5,20 +5,27 @@
       input(type='text' id='text1' placeholder='請直接輸入想搜尋的關鍵字' ng-model='queryString' autofocus)
       a(href='#/addressBookResultBox')
         p 送  出
-    .ui.aligned.content
+
+    .ui.content
       h3.ui.result_list
-      .ui.aligned.list
-        ul
-          li.ui.fluid.segment(ng-repeat="result in queryResult")
-            .infoBox
-              ul.basicBox
-                li.name
-                  | 名稱: {{ result.name }}
-                li(ng-show="result.contact_details", ng-repeat="contact in result.contact_details")
-                  div(ng-if="contact.label=='機關電話'", class="phone")
-                    i.phone.icon
-                    p {{contact.label}}: {{contact.value}}
-                  div(ng-if="contact.label=='機關傳真'", class="fax")
-                    p {{contact.label}}: {{contact.value}}
+      .ui.center.aligned.grid
+        .ui.ten.wide.column.list
+          .ui.two.connected.items.fluid.containbox(ng-repeat="result in queryResult")
+            .ui.aligned.grid
+              .four.wide.column
+                .item
+                  .image
+                    .photobox
+                  .content
+                    p {{ result.name }}
+              .twelve.wide.column
+                .ui.list
+                  .item(ng-show="result.contact_details", ng-repeat="contact in result.contact_details")
+                    .phone(ng-if="contact.label=='機關電話'")
+                      i.circular.icon.phone
+                      | {{contact.value}}
+                    .fax(ng-if="contact.label=='機關傳真'")
+                      i.circular.icon.laptop
+                      | {{contact.value}}
 
     .footer

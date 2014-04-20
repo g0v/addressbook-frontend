@@ -4,12 +4,9 @@ angular.module("ngAddressbook.addressbook",
   .state "addressbook",
     url: "/addressbook"
     views:
-      addressBookSearchBox:
+      addressbook:
         controller: "addressbookCtrl"
-        templateUrl: "addressbook/addressBookSearchBox.html"
-      addressBookResultBox:
-        controller: "addressbookCtrl"
-        templateUrl: "addressbook/addressBookResultBox.html"
+        templateUrl: "addressbook/addressbook.html"
     data:
       pageTitle: "Addressbook"
 

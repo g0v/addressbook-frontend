@@ -16,7 +16,8 @@ AddressbookController = ($scope, Organizations) ->
 
   $scope.$watch "queryString", (oldVal, newVal) ->
     return if oldVal is newVal
-
+    return unless oldVal
+    return unless newVal
     q =
       name:
         $matches: newVal
